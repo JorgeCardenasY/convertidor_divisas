@@ -1,9 +1,16 @@
-def convertidor(sopes):
+def convertidor(monto):
     usd=960
     sol=287
     eur=1100
-    print(f"\nTus ${sopes} pesos Chilenos equivalen a: \n {round((sopes/usd),2)} dolares americanos.\n {round((sopes/eur),2)} euros.\n {round((sopes/sol),2)} soles peruanos.")
+    print(f"\nTus ${monto} pesos Chilenos equivalen a: \n {round((monto/usd),2)} dolares americanos.\n {round((monto/eur),2)} euros.\n {round((monto/sol),2)} soles peruanos.")
 
+while True:
+    sopes = input("\n¿Ingresa la cantidad de pesos chilenos que deseas cambiar: ")
+    try:
+        monto = int(sopes)
+        print(f"¡Perfecto! Has ingresado el número entero: {monto}")
+        break  # Salir del bucle si la conversión es exitosa
+    except ValueError:
+        print("Error: Por favor, ingresa un número entero válido.")
 
-sopes = int(input("\n¿Ingresa la cantidad de pesos chilenos que deseas cambiar: "))
-convertidor(sopes)
+convertidor(monto)
